@@ -1,0 +1,58 @@
+{
+  "event_count": 17702,
+  "sensor_width": 128,
+  "sensor_height": 96,
+  "observed_span_s": 0.999897,
+  "positive_events": 8831,
+  "negative_events": 8871,
+  "timestamp_origin": "0",
+  "input_timestamp_unit": "us",
+  "internal_timestamp_unit": "s",
+  "raster_displayed_events": 5000,
+  "spatial_count_sum": 17702,
+  "temporal_count_sum": 17702,
+  "window_convention": "[start_s, end_s)",
+  "windows": [
+    {
+      "start_s": 0.0,
+      "end_s": 0.1,
+      "event_count": 631
+    },
+    {
+      "start_s": 0.1,
+      "end_s": 0.2,
+      "event_count": 1070
+    },
+    {
+      "start_s": 0.2,
+      "end_s": 0.3,
+      "event_count": 1752
+    },
+    {
+      "start_s": 0.3,
+      "end_s": 0.4,
+      "event_count": 2446
+    }
+  ],
+  "schema_version": 1,
+  "source_path": "outputs/demo/synthetic_events.npz",
+  "source_sha256": "7e74433dbc5ad6d1d7331b157e59fa07b62c915619291be4146897de0d9b387b",
+  "figure_path": "outputs/demo/event_stream.png",
+  "data_kind": "synthetic",
+  "synthetic_seed": 7,
+  "command": [
+    "adaptive-event-vo",
+    "demo",
+    "--seed",
+    "7",
+    "--output-dir",
+    "outputs/demo"
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "numpy": "2.3.5",
+    "matplotlib": "3.10.8",
+    "adaptive_event_vo": "0.1.0"
+  }
+}
