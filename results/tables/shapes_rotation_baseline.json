@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "experiment": "fixed_window_image_motion",
+  "camera_pose_estimated": false,
+  "trajectory_accuracy_measured": false,
+  "config": {
+    "window_ms": [
+      10,
+      25,
+      50
+    ],
+    "repetitions": 3,
+    "start_s": 0.0,
+    "end_s": 1.999998999,
+    "flow": {
+      "max_corners": 300,
+      "quality_level": 0.01,
+      "min_distance_px": 5.0,
+      "block_size": 7,
+      "lk_window_px": 21,
+      "pyramid_levels": 3,
+      "fb_threshold_px": 1.0,
+      "max_lk_error": 30.0,
+      "min_eigenvalue": 0.0001,
+      "min_tracks": 8,
+      "count_clip": 4,
+      "blur_sigma_px": 0.8
+    }
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "logical_cpu_count": 3,
+    "numpy": "2.3.5",
+    "opencv": "4.14.0",
+    "opencv_python_headless": "4.14.0.94",
+    "matplotlib": "3.10.8",
+    "opencv_threads": 1,
+    "opencl_enabled": false,
+    "adaptive_event_vo": "0.2.0",
+    "implementation_sha256": "c6a86f18ddb8f05553efb42d9a9b2ea31e1fa5c1dc8d35747480bbbeec467d43"
+  },
+  "recording_event_count": 437670,
+  "sensor_width": 240,
+  "sensor_height": 180,
+  "timestamp_origin": "5000001001",
+  "input_timestamp_unit": "ns",
+  "frame_reference": "window midpoint, including final partial window",
+  "calibration_applied": false,
+  "warmup_pairs_per_method": 1,
+  "timing_scope": "count+log+blur and feature+forward/backward LK; excludes loading, scheduling, warmup, diagnostics, export, plotting and accumulation delay",
+  "timing_interpretation": "exploratory local processing measurements, not a real-time or energy benchmark",
+  "status_and_track_statistics": "first repetition; timing percentiles pool all repetitions",
+  "provenance": {
+    "data_kind": "real_davis",
+    "dataset": {
+      "schema_version": 1,
+      "dataset": "UZH Event-Camera Dataset and Simulator",
+      "sequence": "shapes_rotation",
+      "dataset_url": "https://rpg.ifi.uzh.ch/davis_data.html",
+      "archive_url": "https://rpg.ifi.uzh.ch/datasets/davis/shapes_rotation.zip",
+      "citation": "Mueggler et al., The Event-Camera Dataset and Simulator, IJRR 36(2), 142\u2013149, 2017",
+      "license": "CC BY-NC-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "archive_sha256": "56aade6bf53dcf73e8fe40905ccac8385cd7606bc9a85103bf2c9f9045117551",
+      "events_sha256": "43f53a28bf8a32551ab5912e61ac6ac3300e0a5cb81b9d89bb70c42b03636b60",
+      "events_file": "events.npz",
+      "width": 240,
+      "height": 180,
+      "timestamp_unit": "ns",
+      "event_count": 437670,
+      "source_timestamp_origin_s": "0E-9",
+      "requested_source_relative_start_s": 5.0,
+      "requested_duration_s": 2.0,
+      "first_selected_source_timestamp_s": "5.000001001",
+      "normalized_interval_end_s": 1.999998999,
+      "selection_convention": "[source_origin + start, source_origin + start + duration)",
+      "preprocessing": "bounded interval only; no sorting, denoising, event dropping or coordinate rectification",
+      "calibration": {
+        "width": 240,
+        "height": 180,
+        "fx": 199.092366542,
+        "fy": 198.82882047,
+        "cx": 132.192071378,
+        "cy": 110.712660011,
+        "distortion": [
+          -0.368436311798,
+          0.150947243557,
+          -0.000296130534385,
+          -0.000759431726241,
+          0.0
+        ],
+        "model": "pinhole_radtan",
+        "distortion_order": [
+          "k1",
+          "k2",
+          "p1",
+          "p2",
+          "k3"
+        ]
+      },
+      "calibration_applied": false,
+      "calibration_text_sha256": "ab797c55a990c03656fbddac2473d3eace2a22f87fea4ca3b0497862b50545cd",
+      "groundtruth_available": true,
+      "groundtruth_source_timestamp_bounds_s": [
+        0.021819287,
+        59.80741576
+      ],
+      "groundtruth_sha256": "bb62c320a51c1be412e17065eb86cfffa9041841290d439c23e447f1991aabdb",
+      "groundtruth_used_for_evaluation": false
+    },
+    "config_file_sha256": "363eb27951aca4024df3470de9ac3d963e847e600f9ff64f4635f9254118c74f",
+    "manifest_sha256": "e97f76b8f58002e7e55961d14d34669b07baab33bcbdbfd2dc84139852872f78",
+    "source_path": "data/davis/shapes_rotation_clip/events.npz",
+    "source_sha256": "43f53a28bf8a32551ab5912e61ac6ac3300e0a5cb81b9d89bb70c42b03636b60",
+    "command": [
+      "adaptive-event-vo",
+      "baseline",
+      "data/davis/shapes_rotation_clip/events.npz",
+      "--manifest",
+      "data/davis/shapes_rotation_clip/manifest.json",
+      "--config",
+      "configs/fixed_window.json",
+      "--output-dir",
+      "outputs/week2/shapes_rotation"
+    ]
+  },
+  "methods": [
+    {
+      "window_ms": 10,
+      "interval_start_s": 0.0,
+      "interval_end_s": 1.999998999,
+      "final_window_right_closed": false,
+      "final_window_partial": true,
+      "representations_per_repetition": 200,
+      "flow_pairs_per_repetition": 199,
+      "processed_events_per_repetition": 437670,
+      "processed_events_all_repetitions": 1313010,
+      "dropped_events": 0,
+      "empty_windows": 0,
+      "successful_pairs": 196,
+      "successful_pair_fraction": 0.9849246231155779,
+      "pair_status_counts": {
+        "ok": 196,
+        "insufficient_tracks": 3
+      },
+      "median_accepted_tracks_per_pair": 64.0,
+      "processing_ms_p50": 2.9787035018671304,
+      "processing_ms_p95": 4.712383757578208,
+      "total_processing_ms_per_repetition": [
+        643.2582312263548,
+        585.1753002207261,
+        654.0450293396134
+      ],
+      "total_processing_ms_median": 643.2582312263548,
+      "wall_loop_ms_per_repetition": [
+        757.0258000050671,
+        613.5180239798501,
+        682.823989976896
+      ],
+      "schedule_construction_ms": 0.8195239934138954
+    },
+    {
+      "window_ms": 25,
+      "interval_start_s": 0.0,
+      "interval_end_s": 1.999998999,
+      "final_window_right_closed": false,
+      "final_window_partial": true,
+      "representations_per_repetition": 80,
+      "flow_pairs_per_repetition": 79,
+      "processed_events_per_repetition": 437670,
+      "processed_events_all_repetitions": 1313010,
+      "dropped_events": 0,
+      "empty_windows": 0,
+      "successful_pairs": 76,
+      "successful_pair_fraction": 0.9620253164556962,
+      "pair_status_counts": {
+        "ok": 76,
+        "insufficient_tracks": 3
+      },
+      "median_accepted_tracks_per_pair": 61.0,
+      "processing_ms_p50": 3.066786506678909,
+      "processing_ms_p95": 5.344227400200907,
+      "total_processing_ms_per_repetition": [
+        259.7120270365849,
+        278.89459201833233,
+        259.1822051035706
+      ],
+      "total_processing_ms_median": 259.7120270365849,
+      "wall_loop_ms_per_repetition": [
+        301.44123002537526,
+        290.14068000833504,
+        272.24374099751003
+      ],
+      "schedule_construction_ms": 0.59385402710177
+    },
+    {
+      "window_ms": 50,
+      "interval_start_s": 0.0,
+      "interval_end_s": 1.999998999,
+      "final_window_right_closed": false,
+      "final_window_partial": true,
+      "representations_per_repetition": 40,
+      "flow_pairs_per_repetition": 39,
+      "processed_events_per_repetition": 437670,
+      "processed_events_all_repetitions": 1313010,
+      "dropped_events": 0,
+      "empty_windows": 0,
+      "successful_pairs": 37,
+      "successful_pair_fraction": 0.9487179487179487,
+      "pair_status_counts": {
+        "ok": 37,
+        "insufficient_tracks": 2
+      },
+      "median_accepted_tracks_per_pair": 72.0,
+      "processing_ms_p50": 3.741426015039906,
+      "processing_ms_p95": 7.154921418987213,
+      "total_processing_ms_per_repetition": [
+        162.18198000569828,
+        159.53226707642898,
+        144.24241200322285
+      ],
+      "total_processing_ms_median": 159.53226707642898,
+      "wall_loop_ms_per_repetition": [
+        186.01214300724678,
+        165.06400497746654,
+        149.42737299134023
+      ],
+      "schedule_construction_ms": 0.31514500733464956
+    }
+  ]
+}

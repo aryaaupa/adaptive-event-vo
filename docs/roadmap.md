@@ -1,6 +1,6 @@
 # Six-week implementation tracker
 
-**4 / 24 tasks complete (17% rounded).** Week 1 is implemented locally. Weeks are milestones rather than guaranteed deadlines; VO may require additional time.
+**8 / 24 tasks complete (33% rounded).** Weeks 1 and 2 are implemented and have reproducible outputs. Weeks are milestones rather than guaranteed deadlines; VO may require additional time.
 
 ## Week 1 — Dataset ingestion and event visualization · 4/4
 
@@ -11,14 +11,16 @@
 
 **Deliverable:** `adaptive-event-vo demo` produces a headless event-viewer report and provenance JSON; dataset documentation and a committed example accompany it. A real sensor recording and interactive GUI are not part of this deliverable.
 
-## Week 2 — Fixed-window motion baseline · 0/4
+## Week 2 — Fixed-window motion baseline · 4/4
 
-- [ ] Implement complete 10/25/50 ms scheduling with final-window and boundary tests.
-- [ ] Add optical-flow/correspondence estimation with confidence masks and declared reference timestamps.
-- [ ] Validate known image displacement and failure cases on controlled synthetic pairs.
-- [ ] Run documented real-event clips with calibration metadata and save a reproducible motion baseline.
+- [x] Implement complete 10/25/50 ms scheduling with final-window and boundary tests.
+- [x] Add optical-flow/correspondence estimation with confidence masks and declared reference timestamps.
+- [x] Validate known image displacement and failure cases on controlled synthetic pairs.
+- [x] Run a documented real-event clip with calibration metadata and save a reproducible motion baseline.
 
 **Deliverable:** one command that runs a fixed-window motion baseline; flow validation is kept distinct from VO validation.
+
+**Evidence:** [Week 2 reproduction and limitations](week2.md), four known-translation checks, three explicit failure cases, fractional-warp unit validation and a real `shapes_rotation` development clip with equal event workloads across all three durations. Distortion correction and pose estimation remain Week 4 work.
 
 ## Week 3 — Adaptive event processing · 0/4
 

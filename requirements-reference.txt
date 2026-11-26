@@ -1,0 +1,5 @@
+# Direct dependencies of the saved Week 2 run (Python 3.12).
+# This is a reference environment, not a complete transitive lockfile.
+numpy==2.3.5
+matplotlib==3.10.8
+opencv-python-headless==4.14.0.94

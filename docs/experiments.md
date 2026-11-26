@@ -28,7 +28,7 @@ On a restricted host with an unwritable home directory, set `MPLCONFIGDIR` and `
 
 ## Planned VO benchmark
 
-No real-sequence benchmark or trajectory result is available yet. The protocol below must be implemented and frozen before filling the README table.
+A real-sequence **image-motion** baseline is available; no trajectory result or adaptive comparison is available yet. See [Week 2 reproduction](week2.md) for the real DAVIS clip, controlled synthetic displacement checks, timing scope and recorded evidence. The protocol below remains the planned VO experiment.
 
 ### Comparison and tuning
 
@@ -37,7 +37,7 @@ No real-sequence benchmark or trajectory result is available yet. The protocol b
 - Adaptive controller: tune budget, bounds, smoothing and activity weight only on development sequences.
 - Ablations: density-only, motion-only, combined; optional representation changes in a separate study.
 
-Use the same test sequence intervals, representation, feature/correspondence settings, pose solver, calibration, and failure policy. Publish both development and held-out sequence lists. Define the final partial-window treatment consistently; include the final event exactly once. The Week 1 viewer's four diagnostic windows are not a complete benchmark scheduler.
+Use the same test sequence intervals, representation, feature/correspondence settings, pose solver, calibration, and failure policy. Publish both development and held-out sequence lists. Week 2 provides a complete fixed-window scheduler; its final partial-window and endpoint conventions must be matched by later policies. The Week 1 viewer's four diagnostic windows remain separate from the complete baseline schedule.
 
 ### Manifest required for each benchmark
 

@@ -64,10 +64,14 @@ The full demo uses a 128×96 sensor grid. Its generator creates two moving verti
 
 Neither fixture models intensity-threshold triggering, calibrated camera motion, scene geometry, or sensor noise physics. They carry no pose ground truth and cannot support ATE/RPE experiments.
 
-## External recordings: next milestone
+## External recordings: implemented DAVIS clip conversion
 
-The intended first real-data source is the DAVIS Event-Camera Dataset and Simulator (Mueggler et al., IJRR 2017). A specific sequence set, distribution terms, calibration, ground-truth coverage, and timestamp synchronization must be checked and recorded before evaluation. No external dataset has been downloaded or evaluated in this release.
+Week 2 uses a real `shapes_rotation` clip from the [DAVIS Event-Camera Dataset and Simulator](https://rpg.ifi.uzh.ch/davis_data.html), Mueggler et al., IJRR 2017. The source text schema is `timestamp x y polarity` in seconds; calibration order is `fx fy cx cy k1 k2 p1 p2 k3`. The dataset is provided under [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/). This license is separate from the project's MIT code license.
 
-Convert source events explicitly to the schema above; keep original data and conversion outputs under `data/`. Document the source URL, sequence, file hash, conversion command, timestamp unit, sensor size, polarity mapping, calibration, and any preprocessing. Raw text with no header, ROS bag, HDF5, and AEDAT ingestion are not implemented. There is no download script claiming to support them.
+`python scripts/download_data.py --start-s 5 --duration-s 2` downloads/caches the official archive and converts only the selected interval to NPZ with integer nanosecond timestamps. The manifest supplies sensor dimensions verified from an archive PNG header, input/archive hashes, calibration, and source/normalized time bounds. It records available ground truth without using it for Week 2 accuracy evaluation. See [the complete conversion and baseline protocol](week2.md).
+
+Only this named DAVIS archive conversion is supported; `load_events` itself still accepts named CSV/NPZ arrays only. Generic headerless text, ROS bag, HDF5 and AEDAT ingestion are not implemented. Keep the archive, converted clip and manifest in ignored `data/`; do not redistribute raw sensor data in Git.
+
+The complete baseline scheduler, unlike the Week 1 viewer, covers the full requested interval and includes final partial and empty windows. Its terminal endpoint convention is described in [Week 2](week2.md#scheduling-and-frame-timestamps).
 
 The current loader and report load the whole recording into RAM and allocate per-pixel count images. Use short converted clips for inspection; streaming and memory-budgeted ingestion are future work.

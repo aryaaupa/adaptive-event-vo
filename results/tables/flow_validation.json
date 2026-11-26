@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "experiment": "known_count_image_translation",
+  "seed": 19,
+  "physical_event_camera_simulation": false,
+  "config": {
+    "max_corners": 300,
+    "quality_level": 0.01,
+    "min_distance_px": 5.0,
+    "block_size": 7,
+    "lk_window_px": 21,
+    "pyramid_levels": 3,
+    "fb_threshold_px": 1.0,
+    "max_lk_error": 30.0,
+    "min_eigenvalue": 0.0001,
+    "min_tracks": 8,
+    "count_clip": 4,
+    "blur_sigma_px": 0.8
+  },
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "cpu": "AMD EPYC 9V74 80-Core Processor",
+    "logical_cpu_count": 3,
+    "numpy": "2.3.5",
+    "opencv": "4.14.0",
+    "opencv_python_headless": "4.14.0.94",
+    "matplotlib": "3.10.8",
+    "opencv_threads": 1,
+    "opencl_enabled": false,
+    "adaptive_event_vo": "0.2.0",
+    "implementation_sha256": "c6a86f18ddb8f05553efb42d9a9b2ea31e1fa5c1dc8d35747480bbbeec467d43"
+  },
+  "acceptance": {
+    "min_accepted_tracks": 20,
+    "max_mean_endpoint_error_px": 0.2,
+    "max_p95_endpoint_error_px": 0.5
+  },
+  "cases": [
+    {
+      "displacement_px": [
+        2,
+        -1
+      ],
+      "status": "ok",
+      "accepted_tracks": 78,
+      "detected_tracks": 78,
+      "mean_endpoint_error_px": 0.00034354619810383734,
+      "p95_endpoint_error_px": 0.0008577930677496566,
+      "passed": true
+    },
+    {
+      "displacement_px": [
+        -3,
+        2
+      ],
+      "status": "ok",
+      "accepted_tracks": 78,
+      "detected_tracks": 78,
+      "mean_endpoint_error_px": 0.0003563816845602156,
+      "p95_endpoint_error_px": 0.0009483406588069445,
+      "passed": true
+    },
+    {
+      "displacement_px": [
+        0,
+        0
+      ],
+      "status": "ok",
+      "accepted_tracks": 78,
+      "detected_tracks": 78,
+      "mean_endpoint_error_px": 0.0,
+      "p95_endpoint_error_px": 0.0,
+      "passed": true
+    },
+    {
+      "displacement_px": [
+        1,
+        3
+      ],
+      "status": "ok",
+      "accepted_tracks": 78,
+      "detected_tracks": 78,
+      "mean_endpoint_error_px": 0.0003212085976678064,
+      "p95_endpoint_error_px": 0.0007162757684440441,
+      "passed": true
+    }
+  ],
+  "failure_cases": [
+    {
+      "case": "blank",
+      "status": "empty_source",
+      "accepted_tracks": 0,
+      "passed": true
+    },
+    {
+      "case": "disappearing_texture",
+      "status": "empty_target",
+      "accepted_tracks": 0,
+      "passed": true
+    },
+    {
+      "case": "textureless",
+      "status": "no_features",
+      "accepted_tracks": 0,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

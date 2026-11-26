@@ -16,3 +16,5 @@ jobs:
       - run: python -m pip install -e .
       - run: python -m unittest discover -s tests -v
       - run: adaptive-event-vo demo --output-dir outputs/ci
+      - run: adaptive-event-vo validate-flow --output-dir outputs/flow-validation
+      - run: adaptive-event-vo motion-demo --output-dir outputs/motion-demo

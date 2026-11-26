@@ -12,9 +12,14 @@ data/
 outputs/
 /results/*
 !/results/ingestion_demo.json
+!/results/README.md
 !/results/figures/
 !/results/tables/
 /results/figures/*
 !/results/figures/event_stream.png
+!/results/figures/fixed_window_baseline.png
+!/results/figures/flow_validation.png
 /results/tables/*
-!/results/tables/.gitkeep
+!/results/tables/shapes_rotation_baseline.json
+!/results/tables/shapes_rotation_methods.csv
+!/results/tables/flow_validation.json

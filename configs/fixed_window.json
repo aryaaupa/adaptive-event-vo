@@ -1,0 +1,20 @@
+{
+  "window_ms": [10, 25, 50],
+  "repetitions": 3,
+  "start_s": 0.0,
+  "end_s": null,
+  "flow": {
+    "max_corners": 300,
+    "quality_level": 0.01,
+    "min_distance_px": 5.0,
+    "block_size": 7,
+    "lk_window_px": 21,
+    "pyramid_levels": 3,
+    "fb_threshold_px": 1.0,
+    "max_lk_error": 30.0,
+    "min_eigenvalue": 0.0001,
+    "min_tracks": 8,
+    "count_clip": 4,
+    "blur_sigma_px": 0.8
+  }
+}

@@ -2,7 +2,7 @@
 
 ## Scope and hypothesis
 
-The goal is to test whether a causal adaptive accumulation policy improves the accuracy–computation trade-off of an otherwise fixed monocular event VO pipeline. This document specifies a proposed experiment, not a validated algorithm or claim of novelty. Week 1 implements ingestion and count frames only.
+The goal is to test whether a causal adaptive accumulation policy improves the accuracy–computation trade-off of an otherwise fixed monocular event VO pipeline. This document specifies the proposed adaptive/VO experiment, not a validated algorithm or claim of novelty. Weeks 1–2 implement ingestion, exhaustive fixed windows and a validated image-correspondence baseline. See [the implemented Week 2 protocol](week2.md) for the current representation, confidence checks, real-data run and limitations.
 
 There are two separate validation stages: representation/motion quality first, then camera trajectory accuracy. Optical flow on accumulated events is not by itself camera odometry.
 
@@ -30,7 +30,7 @@ Required controller tests will cover bounds, zero events, sudden rate changes, t
 ## Common downstream pipeline
 
 1. Load calibrated events with a documented time base and sensor geometry.
-2. Accumulate identical per-polarity representations for every policy. Investigate time surfaces only as a separately controlled experiment.
+2. Accumulate identical representations for every policy. Week 2 pools polarity counts for tracking; use that same choice for initial adaptive comparisons. Investigate separate-polarity tracking or time surfaces only as separately controlled experiments.
 3. Establish a fixed-window optical-flow/correspondence baseline, with confidence checks and documented frame reference times. Validate on synthetic known pixel displacements before using real recordings.
 4. Apply camera intrinsics and distortion correction. Estimate relative pose from geometrically verified correspondences and integrate poses with a declared camera/world convention.
 5. Record trajectory timestamps, tracking failures, processed-event counts, representation count, and stage timing.
